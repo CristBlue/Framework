@@ -1,19 +1,12 @@
 <?php
-/* -----------------------------------------------------------------------------
- * █▀▀▄░▀█▀░█░█░▀█▀░█▀▀░▀█▀░█▀▀░    * @name  divisis_framework
- * █░ █░ █░ █▄█░ █░ ▀▀█░ █░ ▀▀█░    * @autor Brayan Narváez
- * ▀▀▀░ ▀▀▀░ ▀░ ▀▀▀░▀▀▀░▀▀▀ ▀▀▀░    * @email <prinick@ocrend.com>
- * -----------------------------------------------------------------------------
- * Encargado de manejar las reglas definidas en Router::RULES
- * -------------------------------------------------------------------------- */
 
-namespace Divisis\Kernel\Router;
+namespace framework\kernel\Router;
 
 /**
- * Encargado de manejar las reglas definidas en Router::RULES 
+ * Encargado de manejar las reglas definidas en Router::RULES
  *
  * @author Brayan Narváez <prinick@Divisis.com>
-*/
+ */
 final class Rules {
 
     /**
@@ -22,7 +15,7 @@ final class Rules {
      * @param mixed $ruta : Ruta a aplicar la regla
      *
      * @return mixed
-    */
+     */
     final public function none($ruta) {
         return $ruta;
     }
@@ -33,7 +26,7 @@ final class Rules {
      * @param mixed $ruta : Ruta a aplicar la regla
      *
      * @return mixed
-    */    
+     */
     final public function letters($ruta) {
         return preg_match("/^[a-zA-Z ]*$/", $ruta) ? $ruta : null;
     }
@@ -44,7 +37,7 @@ final class Rules {
      * @param mixed $ruta : Ruta a aplicar la regla
      *
      * @return mixed
-    */   
+     */
     final public function alphanumeric($ruta) {
         return preg_match('/^[a-zA-Z0-9 ]*$/', $ruta) ? $ruta : null;
     }
@@ -55,7 +48,7 @@ final class Rules {
      * @param mixed $ruta : Ruta a aplicar la regla
      *
      * @return mixed
-    */
+     */
     final public function url($ruta) {
         return preg_match('/^[a-zA-Z0-9- ]*$/', $ruta) ? $ruta : null;
     }
@@ -66,7 +59,7 @@ final class Rules {
      * @param mixed $ruta : Ruta a aplicar la regla
      *
      * @return int|null
-    */
+     */
     final public function integer($ruta) {
         return is_numeric($ruta) ? (int) $ruta : null;
     }
@@ -77,7 +70,7 @@ final class Rules {
      * @param mixed $ruta : Ruta a aplicar la regla
      *
      * @return int|null
-    */    
+     */
     final public function integer_positive($ruta) {
         return is_numeric($ruta) && $ruta >= 0 ? (int) $ruta : null;
     }
@@ -88,19 +81,22 @@ final class Rules {
      * @param mixed $ruta : Ruta a aplicar la regla
      *
      * @return float|null
-    */
+     */
     final public function float($ruta) {
-        return is_numeric($ruta) ? (float) $ruta : null;
+    return is_numeric($ruta) ? (float) $ruta : null;
+
+
     }
 
-    /**
-     * Solamente números con decimal y positivos
-     *
-     * @param mixed $ruta : Ruta a aplicar la regla
-     *
-     * @return float|null
-    */
-    final public function float_positive($ruta) {
-        return is_numeric($ruta) && $ruta >= 0 ? (float) $ruta : null;
-    }
+/**
+ * Solamente números con decimal y positivos
+ *
+ * @param mixed $ruta : Ruta a aplicar la regla
+ *
+ * @return float|null
+ */
+final public function float_positive($ruta) {
+    return is_numeric($ruta) && $ruta >= 0 ? (float) $ruta : null;
+}
+
 }

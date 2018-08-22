@@ -1,20 +1,11 @@
 <?php
 
-/* -----------------------------------------------------------------------------
- * █▀▀▄░▀█▀░█░█░▀█▀░█▀▀░▀█▀░█▀▀░    * @name  divisis_framework
- * █░ █░ █░ █▄█░ █░ ▀▀█░ █░ ▀▀█░    * @autor Brayan Narváez
- * ▀▀▀░ ▀▀▀░ ▀░ ▀▀▀░▀▀▀░▀▀▀ ▀▀▀░    * @email <prinick@ocrend.com>
- * -----------------------------------------------------------------------------
- * Encargado de controlar las URL Amigables en cada controlador del sistema, es independiente al Routing de Silex.
- * Define por defecto 3 rutas escenciales, controlador, método e id.
- * -------------------------------------------------------------------------- */
+namespace framework\kernel\Router;
 
-namespace Divisis\Kernel\Router;
-
-use Divisis\Kernel\Router\IRouter;
-use Divisis\Kernel\Router\Rules;
-use Divisis\Kernel\Token\Token;
-use Divisis\Kernel\Helpers as Helper;
+use framework\kernel\Router\IRouter;
+use framework\kernel\Router\Rules;
+use framework\kernel\Token\Token;
+use framework\kernel\Helpers as Helper;
 use Exception;
 
 final class Router implements IRouter {

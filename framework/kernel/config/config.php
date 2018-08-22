@@ -18,7 +18,7 @@ if (version_compare(phpversion(), '7.0.0', '<')) {
 }
 
 # Verificar usabilidad de twig
-$__TWIG_CACHE_PATH = _ROOT_ . 'app/templates/.compiled/';
+$__TWIG_CACHE_PATH = _ROOT_ . 'app/templates/compiled/';
 $__TWIG_READABLE_AND_WRITABLE = !is_readable($__TWIG_CACHE_PATH) || !is_writable($__TWIG_CACHE_PATH);
 if ($__TWIG_READABLE_AND_WRITABLE) {
 
