@@ -1,2 +1,23 @@
 ## YAML Template.
 ---
+# Configuración de la base de datos
+database:
+  default_driver: 
+  drivers:
+    mysql: 
+      host: 
+      user:
+      pass:
+      name: 
+      port: 
+      socket:
+    sqlite3:
+      file: 
+    oracle:
+      host: 
+      user: 
+      pass: 
+      name: 
+      port: 
+      protocol: 
+      motor: 
