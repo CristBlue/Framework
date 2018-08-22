@@ -28,18 +28,5 @@ if ($__TWIG_READABLE_AND_WRITABLE) {
 # Obtener la data informativa
 $config = Yaml::parse(file_get_contents(_ROOT_ . 'Divisis/Kernel/Config/Divisis.ini.yml'));
 
-# Cargador de sesiones
-$session = new Session(new NativeSessionStorage(array(
-    'cookie_lifetime' => $config['sessions']['lifetime']
-        )));
-$session->start();
-
-# Cargador de cookies
-$cookie = new Cookies;
-$cookie->reviveSessions();
-
-# Peticiones HTTP
-$http = Request::createFromGlobals();
-
 # Define el timezone actual
 date_default_timezone_set($config['build']['timezone']);
