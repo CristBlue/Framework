@@ -1,5 +1,7 @@
 <?php
 
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Debug\ExceptionHandler;
 use Symfony\Component\Debug\ErrorHandler;
@@ -32,5 +34,13 @@ $config = Yaml::parse(file_get_contents(_ROOT_ . 'framework/kernel/config/config
 
 #se crean las variables globales instanciadas en http
 $http = Request::createFromGlobals();
+# Cargador de sesiones
+$session = new Session(new NativeSessionStorage(array(
+    'cookie_lifetime' => $config['sessions']['lifetime']
+        )));
+
+$session->start();
+
+
 # Define el timezone actual
 date_default_timezone_set($config['build']['timezone']);

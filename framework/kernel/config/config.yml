@@ -30,3 +30,13 @@ build:
   controller_ini: home
   timezone: America/Bogota
   domain: ufpso.edu.co
+  
+  
+sessions:
+lifetime: 7200  
+user_cookie:
+    enable: true
+    key_encrypt: X8f3p@9Vde0WvKauzI8C
+    lifetime: 7200
+    domain: 
+    

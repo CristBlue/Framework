@@ -223,8 +223,7 @@ final class Router implements IRouter {
      */
     private function isReadable(string $controller): string {
         try {
-            global $cookie, $config;
-
+            global $session, $config;
             $u = new Token();
             $id_user = $u->validateToken($cookie->get('SIDCC'));
             $controlleranexo = $controller;
