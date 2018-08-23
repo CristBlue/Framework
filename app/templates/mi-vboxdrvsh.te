@@ -1,0 +1,13 @@
+
+module mi-vboxdrvsh 1.0;
+
+require {
+	type var_log_t;
+	type init_t;
+	class file create;
+}
+
+#============= init_t ==============
+
+#!!!! This avc is allowed in the current policy
+allow init_t var_log_t:file create;

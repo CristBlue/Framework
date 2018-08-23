@@ -1,6 +1,6 @@
 <?php
 
-use Divisis\Kernel\Router\Router;
+use framework\kernel\Router\Router;
 
 #definición de path
 define('_ROOT_', '');

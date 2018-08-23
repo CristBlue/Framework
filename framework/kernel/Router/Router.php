@@ -5,7 +5,7 @@ namespace framework\kernel\Router;
 use framework\kernel\Router\IRouter;
 use framework\kernel\Router\Rules;
 use framework\kernel\Token\Token;
-use framework\kernel\Helpers as Helper;
+//use framework\kernel\Helpers as Helper;
 use Exception;
 
 final class Router implements IRouter {
@@ -241,7 +241,7 @@ final class Router implements IRouter {
                 # Sí no se le suministra un controlador el va al inicial
                 if ($this->getController() === $config['build']['controller_ini']) {
                     if (!is_readable('app/controllers/' . $controller . '.php')) {
-                        Helper\Functions::redir($id_aplication['data']['rol']);
+//                        Helper\Functions::redir($id_aplication['data']['rol']);
                     }
                 }
 

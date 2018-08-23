@@ -1,6 +1,6 @@
 <?php
 
-namespace Divisis\Kernel\Router;
+namespace framework\kernel\Router;
 
 interface IRouter {
 
