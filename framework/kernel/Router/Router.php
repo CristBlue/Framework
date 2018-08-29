@@ -224,45 +224,22 @@ final class Router implements IRouter {
     private function isReadable(string $controller): string {
         try {
             global $session, $config;
-            $u = new Token();
-            $id_user = $u->validateToken($cookie->get('SIDCC'));
-            $controlleranexo = $controller;
             # Verifica si existe sesión
 
-            if ($id_user['success']) {
-
-                # Obtiene el Rol de las Cookies
-                $id_aplication = $u->validateToken($cookie->get('APISID'));
-
+            if ($session['id']) {
                 # Arma la ruta de acuerdo al Rol
-                $controller = strtolower($id_aplication['data']['rol']) . '/' . $controller;
-
-                # Sí no se le suministra un controlador el va al inicial
-                if ($this->getController() === $config['build']['controller_ini']) {
-                    if (!is_readable('app/controllers/' . $controller . '.php')) {
-//                        Helper\Functions::redir($id_aplication['data']['rol']);
-                    }
-                }
+                $controller = strtolower($session['data']['rol']) . '/' . $controller;
 
                 # Sí no tiene sesión, verificamos que la ruta que este accediendo exista, para mandarlo al inicial
-            } elseif ($this->searchController('app/controllers/', $controller) && $this->getController() !== 'home') {
-                Helper\Functions::redir($config['build']['controller_ini']);
             }
-
             # Sí no existe el controlador, el envía a errorController
-            if (!is_readable('app/controllers/' . $controller . '.php')) {
-                if (is_readable('app/controllers/' . $this->getController() . 'Controller' . '.php')) {
-                    $controller = $this->getController() . 'Controller';
-                } else {
-                    if ($id_user['success']) {
-                        $controller = $this->searchControllerDirection('app/controllers/public/', $controlleranexo);
-                    }
-                    if (!$controller) {
-                        $controller = 'errorController';
-                    }
+            if (!is_readable('app/controllers/' . $controller . '.php') && !$session['id']) {
+                $controller = 'errorController';
+            } else if (!is_readable('app/controllers/' . $controller . '.php') && $session['id']) {
+                if (!is_readable('app/controllers/public/' . $this->getController() . '.php')) {
+                    $controller = 'errorController';
                 }
             }
-
             return $controller;
         } catch (Exception $ex) {
             return 'errorController';
