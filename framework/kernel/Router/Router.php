@@ -225,15 +225,15 @@ final class Router implements IRouter {
         try {
             global $session, $config;
             # Verifica si existe sesión
-
-            if ($session['id']) {
+            $id = (array) $session->get('data');
+            if ($id) {
                 # Arma la ruta de acuerdo al Rol
                 $controller = strtolower($session['data']['rol']) . '/' . $controller;
 
                 # Sí no tiene sesión, verificamos que la ruta que este accediendo exista, para mandarlo al inicial
             }
             # Sí no existe el controlador, el envía a errorController
-            if (!is_readable('app/controllers/' . $controller . '.php') && !$session['id']) {
+            if (!is_readable('app/controllers/' . $controller . '.php') && !$id) {
                 $controller = 'errorController';
             } else if (!is_readable('app/controllers/' . $controller . '.php') && $session['id']) {
                 if (!is_readable('app/controllers/public/' . $this->getController() . '.php')) {
