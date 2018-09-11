@@ -283,41 +283,4 @@ final class Router implements IRouter {
         }
     }
 
-    /**
-     * Verifica que, en la ruta y el archivo suministrado exista un folder
-     *
-     * @param $ruta
-     * @param $controller
-     * @return bool
-     */
-    private function searchController($ruta, $controller) {
-        if (is_dir($ruta)) {
-            if ($dh = opendir($ruta)) {
-                while (($file = readdir($dh)) !== false) {
-                    if (is_dir($ruta . $file) && $file != "." && $file != "..") {
-                        if (is_readable($ruta . $file . '/' . $controller . '.php')) {
-                            return true;
-                        }
-                    }
-                }
-                closedir($dh);
-            }
-        }
-        return false;
-    }
-
-    private function searchControllerDirection($ruta, $controller) {
-        if (is_dir($ruta)) {
-            if ($dh = opendir($ruta)) {
-                while (($file = readdir($dh)) !== false) {
-                    if (is_readable($ruta . $file . '/' . $controller . '.php')) {
-                        return $controller;
-                    }
-                }
-                closedir($dh);
-            }
-        }
-        return false;
-    }
-
 }
