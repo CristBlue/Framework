@@ -8,9 +8,16 @@ and open the template in the editor.
     Author     : cristian
 */
 
+body{
+    background-color: #e4e4e4;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
 .cuerpo{
     position: absolute;
     margin: 0 auto;
-    left: 0;
-    right: 0;
+    left: 0 !important;
+    right: 0 !important;
+    top: 25%;
+    padding: 2em !important;
 }

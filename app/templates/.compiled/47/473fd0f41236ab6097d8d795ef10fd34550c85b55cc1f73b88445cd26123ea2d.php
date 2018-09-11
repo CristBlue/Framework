@@ -27,11 +27,18 @@ class __TwigTemplate_54870346773416ad9476655b3fc15b176c949bfbe64edcb4934cebb901e
 
     </head>
     <body>
-        <div class='row cuerpo'>
-            <div class=' card col s4'>
-                <div class=\"input-field col s6\">
-                    <input placeholder=\"Placeholder\" id=\"first_name\" type=\"text\" class=\"validate\">
-                    <label for=\"first_name\">First Name</label>
+        <div class='row'>
+            <div class='cuerpo card col l4 m6 s12'>
+                <div class=\"input-field  s6\">
+                    <input placeholder=\"Usuario\" id=\"usuario\" type=\"text\" class=\"validate\">
+                    <label for=\"usuario\">Usuario</label>
+                </div>
+                <div class=\"input-field s6\">
+                    <input placeholder=\"Contraseña\" id=\"password\" type=\"password\" class=\"validate\">
+                    <label for=\"password\">Contraseña</label>
+                </div>
+                <div>
+                    <button class='btn btn-large '>Ingresar</button>
                 </div>
             </div>
         </div>
@@ -62,11 +69,18 @@ class __TwigTemplate_54870346773416ad9476655b3fc15b176c949bfbe64edcb4934cebb901e
 
     </head>
     <body>
-        <div class='row cuerpo'>
-            <div class=' card col s4'>
-                <div class=\"input-field col s6\">
-                    <input placeholder=\"Placeholder\" id=\"first_name\" type=\"text\" class=\"validate\">
-                    <label for=\"first_name\">First Name</label>
+        <div class='row'>
+            <div class='cuerpo card col l4 m6 s12'>
+                <div class=\"input-field  s6\">
+                    <input placeholder=\"Usuario\" id=\"usuario\" type=\"text\" class=\"validate\">
+                    <label for=\"usuario\">Usuario</label>
+                </div>
+                <div class=\"input-field s6\">
+                    <input placeholder=\"Contraseña\" id=\"password\" type=\"password\" class=\"validate\">
+                    <label for=\"password\">Contraseña</label>
+                </div>
+                <div>
+                    <button class='btn btn-large '>Ingresar</button>
                 </div>
             </div>
         </div>
