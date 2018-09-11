@@ -19,5 +19,17 @@ body{
     left: 0 !important;
     right: 0 !important;
     top: 25%;
-    padding: 2em !important;
+    /*padding: 2em !important;*/
+}
+.cuerpo .card-title{
+    text-align: center;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid;
+    color: #969393;
+}
+.card{
+    border-radius: 1em;
+}
+.card a{
+    color:#4CAF50 !important;
 }
